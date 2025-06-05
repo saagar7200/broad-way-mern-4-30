@@ -59,52 +59,44 @@
 // 	});
 // });
 
-
 // promise
-// 
+//
 
 const registerUser = () => {
-	return new Promise((resolve,reject)=>{
-        setTimeout(() => {
-            resolve({ id: 1, name: 'John' })
-            // reject('User register failed')
-        }, 2000);
-    })
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			resolve({ id: 1, name: "John" });
+			// reject('User register failed')
+		}, 2000);
+	});
 };
 
 const login = (id) => {
-	return new Promise((resolve,reject)=>{
-        setTimeout(() => {
-            resolve({ id: id, name: 'John' ,message:'login success'})
-            // reject('User login failed')
-        }, 2000);
-    })
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			resolve({ id: id, name: "John", message: "login success" });
+			// reject('User login failed')
+		}, 2000);
+	});
 };
 
-
-
 registerUser()
-.then((data)=>{
-    console.log('then',data)
-    return data
-
-})
-.then((data)=>{
-   return login(data.id)
-})
-.then(data =>{
-    console.log(data)
-})
-.catch((error) => console.log('catch',error))
-.finally(()=>{
-
-    console.log('finally')
-})
-
+	.then((data) => {
+		console.log("then", data);
+		return data;
+	})
+	.then((data) => {
+		return login(data.id);
+	})
+	.then((data) => {
+		console.log(data);
+	})
+	.catch((error) => console.log("catch", error))
+	.finally(() => {
+		console.log("finally");
+	});
 
 // login().then().catch()
-
-
 
 // const getProfile = (userID, callback) => {
 // 	setTimeout(() => {
